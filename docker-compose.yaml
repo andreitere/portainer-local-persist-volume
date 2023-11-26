@@ -1,0 +1,9 @@
+version: '3'
+services:
+  docker-local-persist-volume-plugin:
+    image: cwspear/docker-local-persist-volume-plugin
+    container_name: docker-local-persist-volume-plugin
+    volumes:
+      - /run/docker/plugins/:/run/docker/plugins/
+      - ./plugin-data/:/var/lib/docker/plugin-data/
+    restart: unless-stopped
