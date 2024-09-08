@@ -3,6 +3,9 @@ services:
   docker-local-persist-volume-plugin:
     image: cwspear/docker-local-persist-volume-plugin
     container_name: docker-local-persist-volume-plugin
+    environment:
+      - PUID=1000
+      - PGID=1000
     volumes:
       - /run/docker/plugins/:/run/docker/plugins/
       - ./plugin-data/:/var/lib/docker/plugin-data/
